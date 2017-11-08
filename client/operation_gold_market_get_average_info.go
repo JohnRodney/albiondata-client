@@ -19,12 +19,4 @@ type operationGoldMarketGetAverageInfoResponse struct {
 
 func (op operationGoldMarketGetAverageInfoResponse) Process(state *albionState) {
 	log.Debug("Got response to GoldMarketGetAverageInfo operation...")
-
-	upload := lib.GoldPricesUpload{
-		Prices:     op.GoldPrices,
-		TimeStamps: op.TimeStamps,
-	}
-
-	log.Info("Sending gold prices to ingest")
-	sendMsgToPublicUploaders(upload, lib.NatsGoldPricesIngest, state)
 }
