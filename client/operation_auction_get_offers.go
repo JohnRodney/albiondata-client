@@ -58,6 +58,6 @@ func (op operationAuctionGetOffersResponse) Process(state *albionState) {
 		Orders: orders,
 	}
 
-	log.Infof("Sending %d market offers to ingest", len(orders))
+	log.Infof("xxx Sending %d market offers to ingest", len(orders))
 	sendMsgToPublicUploaders(upload, lib.NatsMarketOrdersIngest, state)
 }
