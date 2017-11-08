@@ -2,10 +2,10 @@
 
 
 [[projects]]
-  branch = "feature/hijackData"
+  branch = "master"
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client","log","systray"]
-  revision = "67f353d69c242fad28080b50e18abba6c7febe0c"
+  revision = "158ae8b594d859ec659051c1f9834d455da43984"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
