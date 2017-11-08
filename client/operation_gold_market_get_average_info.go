@@ -1,8 +1,8 @@
 package client
 
 import (
-	"github.com/regner/albiondata-client/lib"
-	"github.com/regner/albiondata-client/log"
+	"github.com/JohnRodney/albiondata-client/lib"
+	"github.com/JohnRodney/albiondata-client/log"
 )
 
 type operationGoldMarketGetAverageInfo struct {
@@ -14,7 +14,7 @@ func (op operationGoldMarketGetAverageInfo) Process(state *albionState) {
 
 type operationGoldMarketGetAverageInfoResponse struct {
 	GoldPrices []int   `mapstructure:"0"`
-	TimeStamps []int   `mapstructure:"1"`
+	TimeStamps []int64 `mapstructure:"1"`
 }
 
 func (op operationGoldMarketGetAverageInfoResponse) Process(state *albionState) {
