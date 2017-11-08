@@ -7,6 +7,10 @@ import (
 	"github.com/mitchellh/mapstructure"
 	"github.com/regner/albiondata-client/lib"
 	"github.com/regner/albiondata-client/log"
+	"fmt"
+	"net/http"
+	"strconv"
+	"io/ioutil"
 )
 
 func decodeRequest(params map[string]interface{}) (operation operation, err error) {
@@ -54,6 +58,28 @@ func decodeResponse(params map[string]interface{}) (operation operation, err err
 		operation = &operationAuctionGetRequestsResponse{}
 	case 149:
 		operation = &operationReadMail{}
+	case 217:
+		operation = &operationGoldMarketGetInfosResponse{}
+		
+		mapstructure.Decode(params, &operation)
+		cost := strconv.FormatInt(params["0"].(int64),10)		
+		sell := strconv.FormatInt(params["2"].(int64),10)
+		cost = cost[:len(cost)-4]
+		sell = sell[:len(sell)-4]			
+		log.Debug("before url")
+
+		url := "https://limitless-lowlands-38074.herokuapp.com/ingest?buyPrice=" + cost + "&sellPrice=" + sell
+		log.Debug("after url")
+		res, err := http.Get(url)
+		if err != nil {
+			log.Fatal(err)
+		}
+		robots, err := ioutil.ReadAll(res.Body)
+		res.Body.Close()
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Printf("%s", robots)
 	case 168:
 		operation = &operationGetClusterMapInfoResponse{}
 	case 219:
