@@ -4,8 +4,7 @@
 [[projects]]
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client"]
-  revision = "d3ef10361e5544d2e8e3179b85b9421c07268cc0"
-  version = "0.0.11"
+  revision = "6da9c98f71886b45041e8ecc93fa70841cb14c33"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
