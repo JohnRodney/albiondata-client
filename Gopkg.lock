@@ -2,10 +2,10 @@
 
 
 [[projects]]
+  branch = "master"
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client","lib","log","systray"]
-  revision = "f6960b4a5dc15a87b42f7e4d1bf9230bdd8f2dc0"
-  branch = "master"
+  revision = "784a7568e8838822495c64fef5e70b7e889d5383"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
@@ -225,6 +225,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5c1ce22c8cf3cb9c6f18b6b6633d85576ccaff03fea38569c1100f219a7668d5"
+  inputs-digest = "3b3653a41fe7e303339989ccf68d15586dd3b7912aa5cacb2c802cbd673f3000"
   solver-name = "gps-cdcl"
   solver-version = 1
