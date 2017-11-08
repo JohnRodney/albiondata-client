@@ -1,7 +1,6 @@
 package client
 
 import (
-	"github.com/JohnRodney/albiondata-client/lib"
 	"github.com/JohnRodney/albiondata-client/log"
 )
 
