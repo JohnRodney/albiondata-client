@@ -5,7 +5,7 @@
   branch = "feature/hijackData"
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client","log","systray"]
-  revision = "066150388731559236fe007c4c305bae41f926c6"
+  revision = "67f353d69c242fad28080b50e18abba6c7febe0c"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
