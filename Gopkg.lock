@@ -3,7 +3,7 @@
 
 [[projects]]
   name = "github.com/JohnRodney/albiondata-client"
-  packages = ["client"]
+  packages = ["client","log","systray"]
   revision = "6da9c98f71886b45041e8ecc93fa70841cb14c33"
 
 [[projects]]
@@ -182,7 +182,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/regner/albiondata-client"
-  packages = ["icon","lib","log","notification","systray"]
+  packages = ["icon","lib","log","notification"]
   revision = "62145bbb1c8b1c61abbb49b2351df7f71fc97635"
 
 [[projects]]
@@ -224,6 +224,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "18076a166ff0bc034da56020d67913b1a0aceb237242b1d21623119cb7345185"
+  inputs-digest = "3b3653a41fe7e303339989ccf68d15586dd3b7912aa5cacb2c802cbd673f3000"
   solver-name = "gps-cdcl"
   solver-version = 1
