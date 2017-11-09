@@ -4,8 +4,8 @@
 [[projects]]
   branch = "master"
   name = "github.com/JohnRodney/albiondata-client"
-  packages = ["client","lib","log","systray"]
-  revision = "784a7568e8838822495c64fef5e70b7e889d5383"
+  packages = ["client","log","systray"]
+  revision = "fcca7ff4e846286081e2e0673e2cf82450053992"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
@@ -71,7 +71,7 @@
   branch = "master"
   name = "github.com/getlantern/ops"
   packages = ["."]
-  revision = "b70875f5d689a9438bca72aefd7142a2af889b18"
+  revision = "37353306c90844c8e0591956f56611f46299d202"
 
 [[projects]]
   name = "github.com/getlantern/stack"
@@ -83,19 +83,19 @@
   branch = "master"
   name = "github.com/getlantern/systray"
   packages = ["."]
-  revision = "66e6fad5eea92d7adda31abfae7a5a52070dfae5"
+  revision = "fc8e01480deb4dc92e7f13151536a9678520ff42"
 
 [[projects]]
   branch = "master"
   name = "github.com/gonutz/w32"
   packages = ["."]
-  revision = "6c6a6524af8dc8a64552e0b0932d0c90b8da2b9d"
+  revision = "8cca7157210fde891e3c255fc7a7458630acb51d"
 
 [[projects]]
   branch = "master"
   name = "github.com/google/go-github"
   packages = ["github"]
-  revision = "24139d56e97a44988087d461125ed6fab91c07ac"
+  revision = "8c08f4fba5e05e0fd2821a5f80cf0cf643bd5314"
 
 [[projects]]
   branch = "master"
@@ -154,7 +154,7 @@
   branch = "master"
   name = "github.com/mitchellh/mapstructure"
   packages = ["."]
-  revision = "d0303fe809921458f417bcf828397a65db30a7e4"
+  revision = "06020f85339e21b2478f756a78e295255ffa4d6a"
 
 [[projects]]
   name = "github.com/nats-io/go-nats"
@@ -196,19 +196,19 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
-  revision = "81e90905daefcd6fd217b62423c0908922eadb30"
+  revision = "6a293f2d4b14b8e6d3f0539e383f6d0d30fce3fd"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce"
+  revision = "bcc62b628abe70dd6bee1f06c4e31630209cd8d7"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/tools"
   packages = ["container/intsets"]
-  revision = "3b1faeda9afbcba128c2d794b38ffe7982141139"
+  revision = "05e91d06384e3a4eb0aba75560d254b8d5a7b431"
 
 [[projects]]
   branch = "v0"
