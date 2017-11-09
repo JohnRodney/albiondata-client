@@ -1,63 +1,65 @@
 package client
 
 import (
-	"encoding/json"
+  "encoding/json"
 
-	"github.com/regner/albiondata-client/lib"
-	"github.com/regner/albiondata-client/log"
-	"github.com/regner/albiondata-client/notification"
+  "github.com/regner/albiondata-client/lib"
+  "github.com/regner/albiondata-client/log"
+  "github.com/regner/albiondata-client/notification"
 )
 
 type operationAuctionGetOffers struct {
-	Category         string   `mapstructure:"1"`
-	SubCategory      string   `mapstructure:"2"`
-	Quality          string   `mapstructure:"3"`
-	Enchantment      uint32   `mapstructure:"4"`
-	EnchantmentLevel string   `mapstructure:"8"`
-	ItemIds          []uint16 `mapstructure:"6"`
-	MaxResults       uint32   `mapstructure:"9"`
-	IsAscendingOrder bool     `mapstructure:"11"`
+  Category         string   `mapstructure:"1"`
+  SubCategory      string   `mapstructure:"2"`
+  Quality          string   `mapstructure:"3"`
+  Enchantment      uint32   `mapstructure:"4"`
+  EnchantmentLevel string   `mapstructure:"8"`
+  ItemIds          []uint16 `mapstructure:"6"`
+  MaxResults       uint32   `mapstructure:"9"`
+  IsAscendingOrder bool     `mapstructure:"11"`
 }
 
 func (op operationAuctionGetOffers) Process(state *albionState) {
-	log.Debug("Got AuctionGetOffers operation...")
+  log.Debug("Got AuctionGetOffers operation...")
 }
 
 type operationAuctionGetOffersResponse struct {
-	MarketOrders []string `mapstructure:"0"`
+  MarketOrders []string `mapstructure:"0"`
 }
 
 func (op operationAuctionGetOffersResponse) Process(state *albionState) {
-	log.Debug("Got response to AuctionGetOffers operation...")
-  state.LocationId = 3005;
-	if state.LocationId == -1 {
-		log.Error("The players location has not yet been set. Please transition zones so the location can be identified.")
-		notification.Push("The players location has not yet been set. Please transition zones so the location can be identified.")
+  log.Debug("Got response to AuctionGetOffers operation...")
 
-		return
-	}
+  if state.LocationId == -1 {
+    log.Error("The players location has not yet been set. Please transition zones so the location can be identified.")
+    notification.Push("The players location has not yet been set. Please transition zones so the location can be identified.")
 
-	orders := []*lib.MarketOrder{}
+    return
+  }
 
-	for _, v := range op.MarketOrders {
-		order := &lib.MarketOrder{}
+  orders := []*lib.MarketOrder{}
 
-		err := json.Unmarshal([]byte(v), order)
-		if err != nil {
-			log.Errorf("Problem converting market order to internal struct: %v", err)
-		}
-		order.LocationID = state.LocationId
-		orders = append(orders, order)
-	}
+  for _, v := range op.MarketOrders {
+    order := &lib.MarketOrder{}
 
-	if len(orders) < 1 {
-		return
-	}
+    err := json.Unmarshal([]byte(v), order)
+    if err != nil {
+      log.Errorf("Problem converting market order to internal struct: %v", err)
+    }
+    order.LocationID = state.LocationId
+    if len(orders) < 20 {
+      orders = append(orders, order)
+    }
+  }
 
-	upload := lib.MarketUpload{
-		Orders: orders,
-	}
+  if len(orders) < 1 {
+    return
+  }
 
-	log.Infof("Sending %d market offers to ingest", len(orders))
-	sendMsgToPublicUploaders(upload, lib.NatsMarketOrdersIngest, state)
+  upload := lib.MarketUpload{
+    Orders: orders,
+  }
+
+  log.Infof("Sending %d market offers to ingest", len(orders))
+  sendMsgToPublicUploaders(upload, lib.NatsMarketOrdersIngest, state)
 }

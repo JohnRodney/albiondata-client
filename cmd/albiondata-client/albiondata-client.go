@@ -25,7 +25,7 @@ func init() {
 	flag.StringVar(
 		&client.ConfigGlobal.PrivateIngestBaseUrls,
 		"p",
-		"http://localhost:8080/",
+		"http://albion-data-revival.herokuapp.com/postMarket/",
 		"Base URL to send PRIVATE data to, can be 'nats://', 'http://' or 'noop' and can have multiple uploaders comma separated.",
 	)
 
