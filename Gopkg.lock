@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client","log","systray"]
-  revision = "fcca7ff4e846286081e2e0673e2cf82450053992"
+  revision = "0e6439a9ace82ab5d1edacc403a200dfe37ff195"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
@@ -202,7 +202,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "bcc62b628abe70dd6bee1f06c4e31630209cd8d7"
+  revision = "4b45465282a4624cf39876842a017334f13b8aff"
 
 [[projects]]
   branch = "master"

@@ -25,7 +25,7 @@ func newHTTPUploader(url string) uploader {
 func (u *httpUploader) sendToIngest(body []byte, topic string) {
   client := &http.Client{Transport: u.transport}
 
-  fullURL := u.baseURL + "/" + topic
+  // fullURL := u.baseURL + "/" + topic
 
   req, err := http.NewRequest("GET", u.baseURL + "/?data=" + string(body[:]), bytes.NewBuffer([]byte(body)))
   if err != nil {
