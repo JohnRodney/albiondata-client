@@ -5,7 +5,7 @@
   branch = "master"
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client","log","systray"]
-  revision = "0e6439a9ace82ab5d1edacc403a200dfe37ff195"
+  revision = "67e8e3fc796e4a383861e6825bd300aa7c748849"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"

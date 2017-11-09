@@ -27,7 +27,7 @@ func (u *httpUploader) sendToIngest(body []byte, topic string) {
 
   // fullURL := u.baseURL + "/" + topic
 
-  req, err := http.NewRequest("GET", u.baseURL + "/?data=" + string(body[:]), bytes.NewBuffer([]byte(body)))
+  req, err := http.NewRequest("GET", u.baseURL + "?data=" + string(body[:]), bytes.NewBuffer([]byte(body)))
   if err != nil {
     log.Errorf("Error while create new request: %v", err)
     return
