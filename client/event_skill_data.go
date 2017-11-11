@@ -43,7 +43,7 @@ func (event eventSkillData) Process(state *albionState) {
 		skill.Fame = fame
 
 		skills = append(skills, skill)
-		    
+		buffer.WriteString("{\"SID\":\""+strconv.Itoa(skill.ID)+"\",\"SLVL\":\""+strconv.Itoa(skill.Level)+"\",\"SPER\":\""+FloatToString(skill.PercentNextLevel)+"\"},")
 	}
 	
 	buffer.Truncate(buffer.Len()-1)
