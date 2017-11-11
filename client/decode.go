@@ -107,7 +107,7 @@ func decodeEvent(params map[string]interface{}) (event operation, err error) {
 	switch eventType {
 	case 77:
 		event = &eventPlayerOnlineStatus{}
-	case 114:
+	case 118:
 		event = &eventSkillData{}
 	default:
 		return nil, nil

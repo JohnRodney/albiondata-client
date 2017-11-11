@@ -2,10 +2,10 @@
 
 
 [[projects]]
-  branch = "master"
   name = "github.com/JohnRodney/albiondata-client"
   packages = ["client","log","systray"]
-  revision = "67e8e3fc796e4a383861e6825bd300aa7c748849"
+  revision = "585bf996c477c79cfb4755767d68b36494ec7df6"
+  version = "0.0.12"
 
 [[projects]]
   name = "github.com/Sirupsen/logrus"
@@ -202,13 +202,13 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "4b45465282a4624cf39876842a017334f13b8aff"
+  revision = "1e2299c37cc91a509f1b12369872d27be0ce98a6"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/tools"
   packages = ["container/intsets"]
-  revision = "05e91d06384e3a4eb0aba75560d254b8d5a7b431"
+  revision = "9c477bae194915bfd4bc8c314e90e28b9ec1c831"
 
 [[projects]]
   branch = "v0"
