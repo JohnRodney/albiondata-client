@@ -49,7 +49,7 @@ func (event eventSkillData) Process(state *albionState) {
 	buffer.Truncate(buffer.Len()-1)
 	buffer.WriteString("],\"player\": \""+state.CharacterName+"\"}")
 	
-log.Info(buffer.String())
+
 	if len(skills) < 1 {
 		return
 	}
@@ -60,7 +60,7 @@ log.Info(buffer.String())
 	}
 */
     url := "https://albion-data-revival.herokuapp.com/postSkills/"
-    fmt.Println("URL:>", url)
+    
 
     var jsonStr = []byte((buffer.String()))
     req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
@@ -73,6 +73,7 @@ log.Info(buffer.String())
         panic(err)
     }
     defer resp.Body.Close()
+	log.Infof("Sending %d skills of %v to ingest", len(skills), state.CharacterName)
 
     //fmt.Println("response Status:", resp.Status)
     //fmt.Println("response Headers:", resp.Header)
